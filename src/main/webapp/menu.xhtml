@@ -1,0 +1,59 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<h:form>
+		<p:menubar>
+			<p:submenu label="#{messages['menu.officer']}">
+				<p:menuitem value="#{messages['menu.menuitem.new']}"
+					url="/officer_edit.jsf"></p:menuitem>
+				<p:menuitem value="#{messages['menu.menuitem.list']}"
+					url="/officer_list.jsf"></p:menuitem>
+			</p:submenu>
+			<p:submenu label="#{messages['menu.rol']}">
+				<p:menuitem value="#{messages['menu.menuitem.new']}"
+					url="/rol_edit.jsf"></p:menuitem>
+				<p:menuitem value="#{messages['menu.menuitem.list']}"
+					url="/rol_list.jsf"></p:menuitem>
+			</p:submenu>
+			<p:submenu label="#{messages['menu.menuitem.administrar']}"
+				rendered="#{securityContext.hasPermission('audit', 'view')}">
+				<p:submenu label="#{messages['menu.documenttype']}">
+					<p:menuitem value="#{messages['menu.menuitem.new']}"
+						url="/documenttype_edit.jsf"></p:menuitem>
+					<p:menuitem value="#{messages['menu.menuitem.list']}"
+						url="/documenttype_list.jsf"></p:menuitem>
+				</p:submenu>
+				<p:submenu label="#{messages['menu.menuitem.geograficos']}">
+					<p:submenu label="#{messages['menu.department']}">
+						<p:menuitem value="#{messages['menu.menuitem.new']}"
+							url="/department_edit.jsf"></p:menuitem>
+						<p:menuitem value="#{messages['menu.menuitem.list']}"
+							url="/department_list.jsf"></p:menuitem>
+					</p:submenu>
+					<p:submenu label="#{messages['menu.locality']}">
+						<p:menuitem value="#{messages['menu.menuitem.new']}"
+							url="/locality_edit.jsf"></p:menuitem>
+						<p:menuitem value="#{messages['menu.menuitem.list']}"
+							url="/locality_list.jsf"></p:menuitem>
+					</p:submenu>
+				</p:submenu>
+				<p:submenu label="#{messages['menu.section']}">
+					<p:menuitem value="#{messages['menu.menuitem.new']}"
+						url="/section_edit.jsf"></p:menuitem>
+					<p:menuitem value="#{messages['menu.menuitem.list']}"
+						url="/section_list.jsf"></p:menuitem>
+				</p:submenu>
+			</p:submenu>
+
+
+
+			<p:menuitem value="#{messages['menu.menuitem.quit']}"
+				url="/index.jsp" />
+		</p:menubar>
+
+	</h:form>
+
+</ui:composition>
